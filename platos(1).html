@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Platos fuertes | Menú</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Lemonada:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@100&display=swap" rel="stylesheet">    <script src="https://kit.fontawesome.com/1ec203c188.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/icono.png">
+
+    <style>
+        :root{
+            --primary:#000;
+            --secundary:#000;
+            --background:#000;
+            --black-text:#fff;
+            --white-text:#ffffff;
+            --button-hover:#83DCEF;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100%;
+            font-family: sans-serif;
+            letter-spacing: 0.03em;
+            line-height: 1.6;
+           font-family: 'Permanent Marker', cursive;
+            background-image: url(https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_960_720.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+        h1{
+            font-family: Permanent Marker;
+        }
+
+        h1 span:hover{
+            letter-spacing: 10px;
+             text-shadow:0px 0px 20px #83DCEF ;          
+             color:#83DCEF ;
+             transition: all .5s;
+        }
+
+        nav{
+            background-color: var(--primary);
+            height: 10vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 100;
+            position: relative;
+            box-shadow: 0px 0px 19px 5px #03DCEF;             
+
+        }
+
+        nav a img:hover{
+            transform: rotate(360deg);
+            transition: all 3s;
+
+        }
+
+        header h1{
+            color: var(--white-text);
+            font-size: 2rem;
+            font-family: 'Caveat', cursive
+            letter-spacing: .7rem;
+        }
+
+        nav ul{
+            display: flex;
+        }
+
+        nav ul li{
+            border-right: solid .1rem rgba(61, 61, 61, 0.41);
+
+        }
+
+        nav ul li:last-child{
+            border-right: none;
+            
+        }
+
+        nav ul li a {
+            color: var(--white-text);
+            font-size: 1.2rem;
+            font-family: 'Pacifico', cursive;
+            padding: .8rem 1rem;
+            
+            
+        }
+
+        nav ul li a:hover{
+            background-color: #03DCEF;
+            transition: all .5s;
+            border-radius: 10px;
+            box-shadow: 0px 0px 19px 5px #03DCEF;            
+
+            
+
+        }
+
+        nav ul li span a{
+            background-color: #03DCEF ;
+            font-size: 1.2rem;
+            padding: .8rem 1rem;
+            text-align: left;
+            border-radius: 10px;
+
+        } 
+
+
+        .drawer{
+            color: var(--white-text);
+            float: left;
+            cursor: pointer;
+            display: none;
+            margin-left: 1rem;
+            border: solid .1rem var(--white-text);
+            padding: .2rem;
+            border-radius: .1rem;
+        }
+
+        #ckbox{
+            display: none;
+        }
+
+
+    .title{
+        text-align: center;
+        font-size: 40px;
+        color: #6a6a6a;
+        margin-top: 100px;
+        font-weight: 100;
+        font-family: 'Lemonada', cursive;
+        color: white;
+        text-shadow: 0px 0px 19px  #03DCEF;
+    }
+    .title:hover{
+        text-shadow: 0px 0px 19px  #03DCEF;
+        letter-spacing: 10px;
+        transition: all .5s;
+        font-size: 3em;
+
+
+    }
+
+
+    .container{
+        width: 100%;
+        max-width: 1200px;
+        height: 430px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+        color: white;
+    }
+
+    .container .card{
+        width: 330px;
+        height: 430px;
+        border-radius: 8px;
+        box-shadow: 0px 15px 20px rgba(131, 220, 239, 1);
+        overflow: hidden;
+        margin: 20px;
+        text-align: center;
+        transition: all 0.25s;
+        background-color: black;
+    }
+
+    .container .card:hover{
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .container .card img{
+        width: 330px;
+        height: 220px;
+    }
+
+
+    .container .card h4{
+            font-weight: 600;
+            font-family: 'Caveat', cursive;
+            font-size: 35px;
+        }
+
+    .container .card p{
+        padding: 0 1rem;
+        font-size: 16px;
+        font-weight: 300;
+        font-family: 'Caveat', cursive;
+        font-size: 30px;
+    }
+
+    .container .card a {
+        font-weight: 500;
+        text-decoration: none;
+        color: #3498db;
+        font-family: 'Caveat', cursive;
+        font-size: 30px;
+    }   
+
+    @media(max-width:1020px){
+
+            nav{
+                justify-content: flex-start;
+                margin-bottom: 100px;
+            }
+
+            .drawer{
+                display: block;
+            }
+
+            nav h1{
+                margin-left: 1rem;
+
+            }
+
+            ul{
+                position: fixed;
+                width: 50%;
+                height: 100vh;
+                background-color: black;
+                top: 10vh;
+                left: -100%;
+                text-align: left;
+                transition: all .5s;
+                display: flex;
+                flex-direction: column;
+                align-content: stretch;
+            }
+
+            nav ul li{
+                padding: 1rem 0;
+                display: flex;
+                flex-direction: column;
+                padding-left: 2rem;
+                border-bottom: solid .1rem rgba(201, 196, 196, 0.4) ;
+
+            }
+
+            #ckbox:checked ~ .menu-box{
+                left: 0;}
+            }
+
+    </style>
+</head>
+<body>
+    
+    <nav>
+            <input type="checkbox" id="ckbox">
+            <label for="ckbox" class="drawer">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+            <a href="index.html"><img src="img/logo.png" alt="logo" width="70px" height="auto"></a>
+            <h1><span>Jiro's Resturant</span></h1>
+
+            <ul class="menu-box">
+                <li><a href="index.html" class="fa fa-home">Inicio</a></li>
+                <li><a href="conocenos.html" class="fas fa-info-circle"> Conócenos</a></li>
+                <li><span><a href="menu1.html" class="fas fa-clipboard-list"> Menú</a></span></li>
+                <li><a href="reservaciones.html" class="far fa-credit-card"> Reservaciones</a></li>
+                <li><a href="contacto.html" class="fas fa-user"> Contáctanos</a></li>
+            </ul>
+        </nav>
+
+    <h1 class="title">Platos fuertes</h1>
+    
+    <div class="container">
+       
+        <div class="card">
+            <img src="https://images-gmi-pmc.edge-generalmills.com/cc1e665a-027a-42e1-8e8a-9b27eaf358b9.jpg">
+            <h4>Carne asada</h4>
+            <p>Precio $30.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+        
+        <div class="card">
+            <img src="https://dam.cocinafacil.com.mx/wp-content/uploads/2020/08/tacos-de-cecina-de-res-con-papas-fritas.jpg">
+            <h4>Tacos con papas</h4>
+            <p>Precio $25.80 </p>
+            <a href="#">Ordernar</a>
+        </div>
+        
+        <div class="card">
+            <img src="https://image.freepik.com/foto-gratis/pollo-frito-papas-fritas-nuggets_1339-71716.jpg">
+            <h4>Pollos con papas</h4>
+            <p>Precio $20.55</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://img2.rtve.es/v/2861034?w=1600&preview=1416057187561.JPG">
+            <h4>Marget de pato y granada</h4>
+            <p>Precio $55.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.recetascostarica.com/base/stock/Recipe/94-image/94-image_web.jpg">
+            <h4>Corvina con salsa dulce</h4>
+            <p>Precio $40.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.deliciosi.com/images/2100/2161/bacalao-al-horno-con-mayonesa.jpg">
+            <h4>Bacalao con costra de mahonesa de pera</h4>
+            <p>Precio $40.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://more.ctv.ca/food/recipes/beef-tournedos-rossini--tournedos-alla-rossini-/_jcr_content/root/responsivegrid_1778395324/responsivegrid_182136378/featuredmedia.coreimg.jpeg/1594682639362/beef-tournedos-rossini--tournedos-alla-rossini-.jpeg">
+            <h4>Tournedo Rossini</h4>
+            <p>Precio $50.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://elcontraste.cl/wp-content/uploads//home2/elcontra/public_html/images//2020/09/hamburguesa-papas-fritas.jpg">
+            <h4>Hamburguesa con papas</h4>
+            <p>Precio $20.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.saborusa.com/wp-content/uploads/2019/10/Animate-a-disfrutar-una-deliciosa-pizza-de-salchicha-Foto-destacada.png">
+            <h4>Pizza</h4>
+            <p>Precio $15.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2018/04/costillas-de-cerdo-agridulces-estilo-chino-receta.jpg">
+            <h4>Costillas de cerdo agridulce</h4>
+            <p>Precio $60.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.kiwilimon.com/recetaimagen/28841/29542.jpg">
+            <h4>Ensalada de salpicón</h4>
+            <p>Precio $30.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://buenprovecho.hn/wp-content/uploads/2020/10/Enchilada_de_picadillo_secundaria.png">
+            <h4>Enchilada de carne</h4>
+            <p>Precio $25.80</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://s1.eestatic.com/2015/05/11/cocinillas/cocinillas_32506750_116175093_1706x960.jpg">
+            <h4>Sushi</h4>
+            <p>Precio $60.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://lh3.googleusercontent.com/proxy/j57_uke2ABZxLD79MRGocuT27DvVbcYM47835iAmH4xNoJvXMWPKhRk9uUY6pMLCtls2Fi2pMjPDtg0RrpT-JbyKL86P-vdIvBOYwxg59Zu1KDFJtA">
+            <h4>Pulpo a las brasas</h4>
+            <p>Precio $65.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/originals/ce/9b/9f/ce9b9f861779342a440884c5a62483b1.jpg">
+            <h4>Arroz chino</h4>
+            <p>Precio $30.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.kiwilimon.com/recetaimagen/12946/th5-640x426-5668.jpg">
+            <h4>Chop suey</h4>
+            <p>Precio $30.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://sevilla.abc.es/gurme/wp-content/uploads/sites/24/2009/11/arrozmelosoconbogavante.jpg">
+            <h4>Arroz con bogavante</h4>
+            <p>Precio $25.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.kiwilimon.com/recetaimagen/720/th5-640x426-3636.jpg">
+            <h4>Raviolis rellenos</h4>
+            <p>Precio $40.55</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://haycosasmuynuestras.com/wp-content/uploads/2017/09/rollo-GRANDE.jpg">
+            <h4>Rollitos de Lenguado</h4>
+            <p>Precio $30.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+    </div>
+    
+</body>
+</html>

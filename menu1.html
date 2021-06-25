@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Menú | Jiro's Restaurant</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Lemonada:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1ec203c188.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/icono.png">
+    <style>
+        :root{
+            --primary:#000;
+            --secundary:#000;
+            --background:#000;
+            --black-text:#fff;
+            --white-text:#ffffff;
+            --button-hover:#83DCEF;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        body{
+            width: 100%;
+            height: 100%;
+            font-family: sans-serif;
+            letter-spacing: 0.03em;
+            line-height: 1.6;
+          font-family: Arial Helvetica, sans-serif;
+            background-image: url(https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_960_720.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+        h1{
+            font-family: Permanent Marker;
+        }
+
+        h1 span:hover{
+            letter-spacing: 10px;
+            text-shadow:0px 0px 20px #83DCEF ;          
+            color:#83DCEF ;
+            transition: all .5s;
+        }
+
+        nav{
+            background-color: var(--primary);
+            height: 10vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 100;
+            position: relative;
+            box-shadow: 0px 0px 19px 5px #03DCEF;             
+
+        }
+
+        nav a img:hover{
+            transform: rotate(360deg);
+            transition: all 3s;
+
+        }
+
+        header h1{
+            color: var(--white-text);
+            font-size: 2rem;
+            font-family: 'Caveat', cursive
+            letter-spacing: .7rem;
+        }
+
+        nav ul{
+            display: flex;
+        }
+
+        nav ul li{
+            border-right: solid .1rem rgba(61, 61, 61, 0.41);
+
+        }
+
+        nav ul li:last-child{
+            border-right: none;
+            
+        }
+
+        nav ul li a {
+            color: var(--white-text);
+            font-size: 1.2rem;
+            font-family: 'Pacifico', cursive;
+            padding: .8rem 1rem;
+            text-align: left;
+            
+        }
+
+        nav ul li a:hover{
+            background-color: #03DCEF;
+            transition: all .5s;
+            border-radius: 10px;
+            box-shadow: 0px 0px 19px 5px #03DCEF;            
+
+            
+
+        }
+
+        nav ul li span a{
+            background-color: #03DCEF ;
+            font-size: 1.2rem;
+            padding: .8rem 1rem;
+            text-align: left;
+            border-radius: 10px;
+
+        } 
+
+
+        .drawer{
+            color: var(--white-text);
+            float: left;
+            cursor: pointer;
+            display: none;
+            margin-left: 1rem;
+            border: solid .1rem var(--white-text);
+            padding: .2rem;
+            border-radius: .1rem;
+        }
+
+        #ckbox{
+            display: none;
+        }
+
+        #nava:hover{
+             color: #83DCEF;
+            transition: all .5s;
+            letter-spacing:10px;
+            text-shadow:-5px 5px 35px #83DCEF ;
+            }
+        
+
+
+        #ti{
+            text-align: center;
+            font-size: 40px;
+            color: white;
+            margin-top: 70px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        #ti:hover{
+            letter-spacing: 10px;
+            text-shadow: 0px 0px 35px #03DCEF  ;
+            transition: all .5s;
+        }
+
+
+        .btn-open-popup{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            display: block;
+            background: #03DCEF;
+            padding: 20px 50px;
+            border-radius: 50px;
+
+        }
+
+
+        .container-all{
+            width: 100%;
+            height: 100%;
+            margin-top: 0;
+            position: fixed;
+            padding: 40px;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 600ms;
+            top: 0;
+
+            
+        }
+
+
+        .container-all:target{
+            background: rgba(0,0,0,0.8);
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .container-all:target .popup{
+            top:50%;
+            left: 50%;
+            transform: rotate(0deg) translate(-50%, -50%);
+            visibility: visible;
+        }
+
+        .container-text span h2 a:hover{
+            letter-spacing: 2px;
+            box-shadow: 0px 0px 35px #03DCEF  ;
+            text-shadow: 0px 0px 35px white ;
+            transition: all .5s; 
+            padding: 3%;
+            background-color: #03DCEF ;
+            border-radius: 20px;
+
+
+        }
+
+        .container-text span h2 a{
+            font-size: 22px;
+        }
+
+  
+
+
+        .popup{
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            position: relative;
+            display: flex;
+            background: black;
+            visibility: hidden;
+            top: -80%;
+            left: -80%;
+            transform: rotate(90deg) translate(-150%, 230%);
+            transition: all 600ms;
+            color: white;
+            box-shadow: 0px 15px 20px #83DCEF;
+            font-size: 20px;
+
+        }
+
+
+        .img{
+            width: 40%;
+            background-image: url(https://cdn.pixabay.com/photo/2014/05/18/11/25/pizza-346985_640.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container-text{
+            width: 60%;
+            padding: 50px;
+            overflow-y: auto;
+        }
+
+
+        .container-text h1{
+            font-size: 30px;
+        }
+
+
+
+        .btn-close-popup{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            padding: 20px;
+            background: black;
+            color: white;
+            border-radius: 50%;
+            line-height: 10px;
+        }
+
+        .btn-open-popup:hover{
+            box-shadow:0px 0px 35px #03DCEF ;
+            letter-spacing: 10px;
+            color: white;
+            transition: all .3s;
+            text-align: justify;
+
+        }
+
+        .btn-close-popup:hover{
+            box-shadow:-5px 5px 35px red ;
+            background-color: red;
+            transform: rotate(1800deg);
+            text-align: center;
+            transition: all .8s;
+           
+        }
+
+        footer{
+            background-color: black;
+            color: var(--white-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+            top: 100%;
+            position: absolute;
+            width: 100%;
+            box-shadow: 0px 0px 19px 5px #03DCEF;
+
+
+        }
+
+
+
+
+        footer a{
+            color: white;
+            font-family: Permanent Marker;
+        }
+
+         footer a:hover{
+            color: #83DCEF;
+            transition: all .5s;
+            letter-spacing: 10px;
+            text-shadow:-5px 5px 35px #83DCEF ;
+        }
+
+
+        
+
+       
+        .container-text h2:hover{
+           text-shadow:0px 0px 35px #03DCEF ;
+           transition: all .5s;
+
+        }
+
+        .img:hover{
+           box-shadow:0px 0px 35px #03DCEF ;
+            transform: rotate(360deg);
+            transition: all 3s;
+            border-radius: 20px;
+
+    
+
+        }
+        .popup:hover{
+            background-color: #18171c;
+            transition: all .2s;
+           box-shadow:0px 0px 35px #03DCEF ;            
+        }
+        @media screen and (max-width: 900px){
+            nav{
+                height: 100%;
+                width: 100%;
+            }
+
+            footer{
+
+                width: 100%;
+                top: 100%;
+            }
+
+
+            .popup{
+                flex-direction: column;
+                height: 100%;
+                max-height: 800px;
+            }
+            
+            .img{
+                width: 100%;
+                height: 40%;
+            }
+            
+            .container-text{
+                width: 100%;
+                height: 60%;
+                padding: 80px;
+            }
+            *{
+                margin: 0%;
+                padding: 0%;
+            }
+
+            #ti{
+                display: none;
+            }
+        }
+
+        @media(max-width:1020px){
+            nav{
+                height: 100%;
+                width: 100%;
+            }
+
+            footer{
+
+                width: 100%;
+                top: 100%;
+            }
+         
+
+            #ti{
+
+                display: none;
+            }
+            nav{
+                justify-content: flex-start;
+                margin-bottom: 100px;
+            }
+
+            .drawer{
+                display: block;
+            }
+
+            nav h1{
+                margin-left: 1rem;
+
+            }
+
+            ul{
+                position: fixed;
+                width: 50%;
+                height: 100vh;
+                background-color: black;
+                top: 10vh;
+                left: -100%;
+                text-align: left;
+                transition: all .5s;
+                display: flex;
+                flex-direction: column;
+                align-content: stretch;
+            }
+
+            nav ul li{
+                padding: 1rem 0;
+                display: flex;
+                flex-direction: column;
+                padding-left: 2rem;
+                border-bottom: solid .1rem rgba(201, 196, 196, 0.4) ;
+
+            }
+
+            #ckbox:checked ~ .menu-box{
+                left: 0;
+            }
+           
+
+
+        @media screen and (max-width: 500px){
+            .container-text{
+                padding: 20px;
+            }
+            nav{
+                height: 100%;
+                width: 100%;
+            }
+
+            footer{
+              
+                width: 100%;
+                top: 100%;
+            }
+            #ti{
+                display: none;
+            }            
+            .container-text h1{
+                font-size: 20px;
+            }
+            
+            .container-text p{
+                font-size: 12px;
+            }
+        }
+        *{
+                margin: 0%;
+                padding: 0%;
+            }
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <input type="checkbox" id="ckbox">
+            <label for="ckbox" class="drawer">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+            <a href="index.html"><img src="img/logo.png" alt="logo" width="70px" height="auto"></a>
+            <h1 id="nava">Jiro's Resturant</h1>
+
+            <ul class="menu-box">
+                <li><a href="../index.html" class="fa fa-home"> Inicio</a></li>
+                <li><a href="conocenos.html" class="fas fa-info-circle"> Conócenos</a></li>
+                <li><span><a href="menu1.html" class="fas fa-clipboard-list"> Menú</a></span></li>
+                <li><a href="reservaciones.html" class="far fa-credit-card"> Reservaciones</a></li>
+                <li><a href="contacto.html" class="fas fa-user"> Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <p id="ti">¡Bienvenido a nuestro menú!</p>
+    <div id="container">
+        <a href="#modal" class="btn-open-popup">Abrir Menú</a>
+    </div>
+    
+    
+    <div class="container-all" id="modal">
+        
+        <div class="popup">
+            <div class="img"></div>
+            <div class="container-text">
+                <h2>¡Elige una de las categorías que desearías degustar!</h2>
+                <p></p>
+                <p></p>
+                <span><h2><a href="sopa.html">🍲Sopas</a></h2></span>
+                <span><h2><a href="platos.html">🥙Platos Fuertes</a></h2> </span>
+                <span><h2><a href="ensalada.html">🥗Ensaladas</a></h2></span>
+                <span><h2><a href="postre.html">🍩Postres</a></h2></span>
+                <span><h2><a href="bbc.html">🥂Bebidas Carbonatadas</a></h2></span>
+                <span><h2><a href="bbn.html">🍍Bebidas Naturales</a></h2></span>
+                
+                
+                
+               
+            </div>
+            
+            <a href="#" class="btn-close-popup">X</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <h2><b><a href="../index.html"><span class="one">Jiro's Restaurant</a></b> &copy;2021 | Todos los derechos Reservados</h2>
+    </footer>
+</body>
+
+</html>

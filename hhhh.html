@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bebidas naturales | Menú</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Lemonada:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@100&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1ec203c188.js" crossorigin="anonymous"></script>
+    
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+
+        html, body{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            width: 100%;
+            height: 100%;
+            font-family: sans-serif;
+            letter-spacing: 0.03em;
+            line-height: 1.6;
+           font-family: 'Permanent Marker', cursive;
+            background-image: url(https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_960_720.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        nav{
+            background-color: black;
+            height: 10vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 0;
+        }
+
+        header h1{
+            color: white;
+            font-size: 2rem;
+            font-family: 'Caveat', cursive;
+            letter-spacing: .7rem;
+        }
+
+        nav ul{
+            display: flex;
+        }
+
+        nav ul li{
+            border-right: solid .1rem rgba(61, 61, 61, 0.41);
+
+        }
+
+        nav ul li:last-child{
+            border-right: none;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 1.2rem;
+            font-family: 'Pacifico', cursive;
+            padding: .8rem 1rem;
+            
+        }
+
+        nav ul li a:hover{
+            background-color: #03DCEF;
+            transition: all .5s;
+            border-radius: 10px;
+            box-shadow: 0px 0px 19px 5px #03DCEF; 
+            
+
+        }
+
+
+        nav ul li span a{
+            background-color: #03DCEF ;
+            font-size: 1.2rem;
+            padding: .8rem 1rem;
+            text-align: left;
+            border-radius: 10px;
+
+        } 
+
+
+
+        .drawer{
+            
+            float: left;
+            cursor: pointer;
+            display: none;
+            margin-left: 1rem;
+            border: solid .1rem white;
+            padding: .2rem;
+            border-radius: .1rem;
+        }
+
+        #ckbox{
+            display: none;
+        }
+
+        .title{
+            text-align: center;
+            font-size: 40px;
+            color: #6a6a6a;
+            margin-top: 100px;
+            font-weight: 100;
+            font-family: 'Lemonada', cursive;
+            color: white;
+            text-shadow: 0px 10px 20px  white;
+        }
+
+
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            height: 430px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: auto;
+            color: white;
+        }
+
+        .container .card{
+            width: 330px;
+            height: 430px;
+            border-radius: 8px;
+            box-shadow: 0 15px 20px rgba(131, 220, 239, 1);
+            overflow: hidden;
+            margin: 20px;
+            text-align: center;
+            transition: all 0.25s;
+            background-color: black;
+        }
+
+        .container .card:hover{
+            transform: translateY(-15px);
+            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .container .card img{
+            width: 330px;
+            height: 220px;
+        }
+
+
+        .container .card h4{
+            font-weight: 600;
+            font-family: 'Caveat', cursive;
+            font-size: 25px;
+        }
+
+        .container .card p{
+            padding: 0 1rem;
+            font-size: 16px;
+            font-weight: 300;
+            font-family: 'Caveat', cursive;
+            font-size: 20px;
+        }
+
+        .container .card a {
+            font-weight: 500;
+            text-decoration: none;
+            color: #3498db;
+            font-family: 'Caveat', cursive;
+            font-size: 20px;
+        }
+
+        @media(max-width:1020px){
+
+        nav{
+            justify-content: flex-start;
+            margin-bottom: 100px;
+        }
+
+        .drawer{
+            display: block;
+        }
+
+        nav h1{
+            margin-left: 1rem;
+
+        }
+
+        ul{
+            position: fixed;
+            width: 50%;
+            height: 100vh;
+            background-color: black;
+            top: 10vh;
+            left: -100%;
+            text-align: left;
+            transition: all .5s;
+            display: flex;
+            flex-direction: column;
+            align-content: stretch;
+        }
+
+        nav ul li{
+            padding: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            padding-left: 2rem;
+            border-bottom: solid .1rem rgba(201, 196, 196, 0.4) ;
+
+        }
+
+        #ckbox:checked ~ .menu-box{
+            left: 0;}
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <input type="checkbox" id="ckbox">
+        <label for="ckbox" class="drawer">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </label>
+        <img src="img/logo.png" alt="logo" width="60px" height="auto">
+        <h1>Jiro's Resturant</h1>
+
+        <ul class="menu-box">
+            <li><a href="index.html" class="fa fa-home"> Inicio</a></li>
+            <li><a href="conocenos.html" class="fas fa-info-circle"> Conócenos</a></li>
+            <li><a href="menu1.html" class="fas fa-clipboard-list"> Menú</a></li>
+            <li><a href="#" class="far fa-credit-card"> Reservaciones</a></li>
+            <li><a href="contacto.html" class="fas fa-user"> Contáctanos</a></li>
+        </ul>
+    </nav>
+    
+    <h1 class="title">Bebidas Naturales</h1>
+    
+    <div class="container">
+       
+        <div class="card">
+            <img src="https://www.ecestaticos.com/imagestatic/clipping/5f8/8e8/5f88e81a7f9f4f4896ed6a41964a5138/es-malo-beberse-un-vaso-de-agua-de-la-noche-anterior.jpg?mtime=1590398431">
+            <h4>Agua</h4>
+            <p>Precio $5.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+        
+        <div class="card">
+            <img src="https://www.cardamomo.news/__export/1620928357075/sites/debate/img/2021/05/13/jugo_de_naranja_con_cxrcuma_crop1620928356563.jpeg_242310155.jpeg">
+            <h4>Jugo de naranja</h4>
+            <p>Precio $6.00 </p>
+            <a href="#">Ordernar</a>
+        </div>
+        
+        <div class="card">
+            <img src="https://chapinradio.com/wp-content/uploads/2019/11/web3-passion-fruit-maracuya-healthy-food-ideas-shutterstock_501025519-charoenkrung-studio99-ai.jpg">
+            <h4>Jugo de maracuyá</h4>
+            <p>Precio $6.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://vod-hogarmania.atresmedia.com/cocinatis/images/images01/2019/04/29/5cc6daecfa7dec0001ed6e84/1239x697.jpg">
+            <h4>Limonada</h4>
+            <p>Precio $6.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.tqma.com.ec/images/com_yoorecipe/img_preview/cropped-13165.jpg">
+            <h4>Jugo de mora</h4>
+            <p>Precio $6.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2018/05/como-hacer-agua-con-flor-de-jamaica.jpg">
+            <h4>Jugo de jamaica</h4>
+            <p>Precio $6.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.goya.com/media/3735/horchata-mexican-style-almond-and-rice-drink1.jpg?quality=80">
+            <h4>Horchata</h4>
+            <p>Precio $7.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+
+        <div class="card">
+            <img src="https://1.bp.blogspot.com/-45W5lqLg5i8/XtE4OHyav8I/AAAAAAAAd6c/F53J8rs_pxolhfIwTQlwJHMkM69jjSBXwCK4BGAsYHg/w640-h426/20696002_s.jpg">
+            <h4>Jugo de melón</h4>
+            <p>Precio $6.00</p>
+            <a href="#">Ordenar</a>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
